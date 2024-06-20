@@ -1,0 +1,94 @@
+.landing-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+.crypto-monitor-text,
+.real-time-text {
+  font-size: 6.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.crypto-monitor-text {
+  color: var(--white);
+  -webkit-text-stroke-color: var(--white);
+}
+.crypto-monitor-text:hover {
+  color: var(--black);
+  -webkit-text-stroke-color: var(--white);
+  -webkit-text-stroke-width: 2px;
+
+  transition: all 0.3s;
+}
+
+.real-time-text {
+  color: var(--orange);
+}
+
+.info {
+  font-size: 1.2rem;
+  color: var(--grey);
+}
+
+.landing-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.iphone {
+  min-height: 300px;
+  position: relative;
+  z-index: 10;
+  width: 350px;
+  margin-top: 0.6rem;
+}
+
+.gradient {
+  top: 9rem;
+  right: 6rem;
+  margin: 0;
+  position: absolute;
+  width: 270px;
+  height: 550px;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 1250px) {
+  .crypto-monitor-text,
+  .real-time-text {
+    font-size: 4.5rem;
+  }
+  .info {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .landing-flex {
+    flex-direction: column;
+  }
+  .crypto-monitor-text,
+  .real-time-text {
+    font-size: 4.5rem;
+  }
+  .info {
+    font-size: 1rem;
+  }
+  .gradient {
+    top: 44rem;
+    right: -2.5rem;
+    margin: 0;
+    position: absolute;
+    width: 270px;
+    height: 550px;
+    border-radius: 20px;
+  }
+  .landing-btn {
+    margin-bottom: 2rem;
+  }
+}

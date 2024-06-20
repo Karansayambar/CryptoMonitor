@@ -1,0 +1,125 @@
+.grid-container {
+  width: 320px;
+  height: 320px;
+  background-color: var(--darkgrey);
+  border-radius: 0.5rem;
+  margin: 1rem 0.55rem;
+}
+
+.grid-red:hover {
+  border: 2px solid var(--red);
+}
+
+.grid-green:hover {
+  border: 2px solid var(--green);
+}
+
+.head-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.icon-img {
+  width: 65px;
+  height: 65px;
+}
+
+.coin-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1px;
+}
+
+.coin-info > :first-child {
+  text-transform: uppercase;
+}
+
+.coin-info > :last-child {
+  color: var(--gray);
+}
+
+.chip-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin: 1rem 1.5rem;
+}
+
+.chip-green {
+  border: 1px solid var(--green);
+  color: var(--green);
+  border-radius: 2rem;
+  padding: 0.25rem 1.25rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.chip-green:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.chip-red {
+  border: 1px solid var(--red);
+  color: var(--red);
+  border-radius: 2rem;
+  padding: 0.25rem 1.25rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.chip-red:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.trendup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--green);
+  border-radius: 5rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--green);
+  text-align: center;
+}
+
+.trendup:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.trenddown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--red);
+  border-radius: 5rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--red);
+  text-align: center;
+}
+
+.trenddown:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.coin-price {
+  padding: 0 1.5rem;
+}
+
+.volume-cap p {
+  color: var(--gray);
+  padding: 0 1rem;
+  font-weight: 600;
+}

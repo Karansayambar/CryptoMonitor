@@ -1,0 +1,23 @@
+.btn {
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  min-width: 100px;
+}
+
+.btn:hover {
+  box-shadow: rgba(221, 109, 40, 0.24) 5px 5px 10px;
+}
+.btn-outlined {
+  text-align: center;
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--orange);
+  min-width: 100px;
+}
+
+.btn-outlined:hover {
+  box-shadow: rgba(221, 109, 40, 0.24) 5px 5px 10px;
+}
