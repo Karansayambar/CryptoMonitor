@@ -3,11 +3,11 @@ import Select from '@mui/material/Select';
 import './style.css';
 import { useState } from 'react';
 
-export default function SelectDays({days, handleDaysChange}) {
+export default function SelectDays({days, handleDaysChange, noPTag}) {
   
   return (
     <div sx={{ minWidth: 120 }} className='select-days'>
-        <p>Price Change In</p>
+        {!noPTag && <p>Price Change In</p>}
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"

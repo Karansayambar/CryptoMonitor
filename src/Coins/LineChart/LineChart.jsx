@@ -10,6 +10,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import { convertNumber } from '../../functions/convertNumber';
 
 // Register necessary components
 ChartJS.register(
@@ -22,7 +23,7 @@ ChartJS.register(
     Legend
 );
 
-const LineChart = ({ chartData, multiAxis }) => {
+const LineChart = ({ chartData, priceType,  multiAxis }) => {
     const options = {
         plugins: {
             legend: {
@@ -35,11 +36,32 @@ const LineChart = ({ chartData, multiAxis }) => {
             intersect: false,
         },
         scales: {
-            y: {
+            crypto1: {
+                type: "linear",
+                display: true,
+                position: "left",
                 beginAtZero: true,
+                ticks: {
+                    callback: function (value) {
+                        if (priceType === "prices") return "$" + value.toLocaleString();
+                        else return "$" + convertNumber(value);
+                    }
+                }
+            },
+            crypto2: {
+                type: "linear",
+                display: true,
+                position: "right",
+                beginAtZero: true,
+                ticks: {
+                    callback: function (value) {
+                        if (priceType === "prices") return "$" + value.toLocaleString();
+                        else return "$" + convertNumber(value);
+                    }
+                }
             },
         },
-    };
+    }
 
     return (
         <div>

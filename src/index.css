@@ -31,3 +31,10 @@ a {
   border-radius: 0.8rem;
   padding: 0 0.5rem;
 }
+
+.coin-day-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}

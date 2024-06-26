@@ -10,59 +10,42 @@ import LineChart from '../Coins/LineChart/LineChart';
 import { convertDate } from '../functions/convertDate';
 import SelectDays from '../Coins/SelectDays';
 import TogglePriceType from '../Coins/PriceType';
+import { settingChartData } from '../functions/settingChartData';
 
 const CoinPage = () => {
     const {id} = useParams();
     const [coinData, setCoinData] = useState();
     const [isLoading, setIsLoading] = useState(true);
-    const [days, setDays] = useState(60)
+    const [days, setDays] = useState(30)
     const [chartData, setChartData] = useState({});
-    const [priceType, setPriceType] = useState("left");
+    const [priceType, setPriceType] = useState("prices");
 
         useEffect(() => {
         if (id) {
             getData();
         }
-    }, [id]);
+    }, [id, days, priceType]);
 
     async function getData() {
-        try {
-            const data = await getCoinData({ id });
+            const data = await getCoinData( id );
             if (data) {
                 coinObject(setCoinData, data);
-                const prices = await getCoinPrices({ id, days, priceType });
-                if (prices.length > 0) {
-
-                    setChartData({
-                        labels : prices.map((date) => convertDate(date[0])),
-                        datasets : [
-                            {
-                                label: 'Price',
-                                data: prices.map(price => price[1]),
-                                borderColor: "#dc5f00",
-                                borderWidth: 2,
-                                fill: true,
-                                tension: 0.25,
-                                backgroundColor: "rgba(220, 95, 0, 0.2)",
-                                pointRadius: 1,
-                            },
-                        ],
-                    });
-                     setIsLoading(false);
+                const prices = await getCoinPrices( id, days , priceType);
+                if (prices && prices.length > 0) {
+                    settingChartData(setChartData, prices);
+                    setIsLoading(false);
                 }
             }
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            setIsLoading(false); // Set loading to false in case of error
         }
-    }
+
     
     const handleDaysChange = async (event) => {
         setIsLoading(true);
         setDays(event.target.value);
+        console.log(days);
          const prices = await getCoinPrices( id, event.target.value, priceType );
-                if (prices.length > 0) {
-                    setChartData({setChartData, prices})
+                if (prices && prices.length > 0) {
+                    settingChartData(setChartData, prices)
                      setIsLoading(false);
                 }
     };
@@ -73,17 +56,10 @@ const CoinPage = () => {
         setPriceType(newType);
         const prices = await getCoinPrices( id, days, newType );
                 if (prices.length > 0) {
-                    setChartData({setChartData, prices})
+                    settingChartData({setChartData, prices})
                      setIsLoading(false);
                 }
     };
-
-    // if(coinData){
-    //     console.log("data fetch success",coinData.description)
-    // }else{
-    //     console.log("cannot fetch data")
-    // }
-
 
 
   return (
