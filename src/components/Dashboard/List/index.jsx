@@ -44,10 +44,10 @@ const List = ({ coin }) => {
                 </h3>
             </td>
             {/* <td className='volume-cap'> */}
-            <td>
+            <td className='total_vol'>
                 <p>Total Volume: {coin.total_volume.toLocaleString()}</p>
             </td>
-            <td>
+            <td className='market_cap'>
                 <p>Market Cap: $ {coin.market_cap.toLocaleString()}</p>
             </td>
             {/* </td> */}

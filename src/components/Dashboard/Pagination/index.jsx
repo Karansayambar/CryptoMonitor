@@ -2,6 +2,7 @@ import Pagination from '@mui/material/Pagination';
 import './style.css'
 
  const PaginationComponent = ({page, handlePageChange}) => {
+  console.log("PaginationComponent rendered with page:", page);
   return (
     <div className='pagination'>
       {/* <Pagination count={10} showFirstButton showLastButton /> */}
@@ -9,8 +10,6 @@ import './style.css'
       count={10} 
       page={page} 
       onChange = {(event, value) => handlePageChange(event, value)}
-      // hidePrevButton 
-      // hideNextButton 
        sx={{
           color: "var(--white)",
           "& .Mui-selected": {

@@ -14,10 +14,12 @@ const DashboardPage = () => {
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
+
     const handlePageChange = (event, value) => {
+      console.log("dashboard render",value);
       var previousIndex = (value - 1) * 10;
       setPaginatedcoins(coins.slice(previousIndex, previousIndex + 10))
-      setValue(value);
+      setPage(value);
     }
 
     const onSearchChange = (e) => {
@@ -46,7 +48,7 @@ const DashboardPage = () => {
     {isLoading ? 
     <Loader/> 
     : 
-    <div>
+    <div className='dashboard'>
         <Search search={search} onSearchChange={onSearchChange}/>
         <TabsComponent coin={search ? filteredCoins : paginatedcoins}/>
         {!search && <PaginationComponent page={page} handlePageChange={handlePageChange}/>}

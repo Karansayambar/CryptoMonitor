@@ -3,6 +3,7 @@
   height: 320px;
   background-color: var(--darkgrey);
   border-radius: 0.5rem;
+  padding-top: 1rem;
   margin: 1rem 0.55rem;
 }
 
@@ -122,4 +123,12 @@
   color: var(--gray);
   padding: 0 1rem;
   font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container {
+    height: 300px;
+    width: 300px;
+    /* margin-left: 3rem; */
+  }
 }

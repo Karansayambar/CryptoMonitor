@@ -4,6 +4,7 @@ import Button from '../../Common/Button';
 import iphone from '../../../assets/phone.png';
 import gradient from '../../../assets/iphonegradient.jpg';
 import { motion } from "framer-motion";
+import {Link} from 'react-router-dom';
 
 const MainComponent = () => {
   return (
@@ -37,37 +38,38 @@ const MainComponent = () => {
           animate={{ opacity: 1, x : -0 }}
           transition={{ duration: 1, delay : 1 }}
         >
-          <Button text="Dashboard" />
+          <Link to="/dashboard"><Button text="Dashboard" onClick={() => console.log("click")}/></Link>
           <Button text="Share" outlined={true} />
         </motion.div>
       </div>
       <div className='right-component'>
-         <motion.img 
-          src={iphone} 
-          className='iphone'
-          alt='iPhone'
-          initial={{ y: -10 }}
-          animate={{ y: 10 }}
-          transition={{
-            type: "smooth",
-            repeatType: "mirror",
-            duration: 2,   
-            repeat: "infinity"
-          }}
-        />
-        <motion.img 
-          src={gradient}
-          className='gradient'
-          alt='Gradient Background'
-          animate={{ y: 10 }}
-          transition={{ 
-            type: "smooth",
-            repeatType: "mirror",
-            duration: 2,
-            repeat: "infinity"
-          }}
-        />
-      </div>
+      <motion.img 
+        src={iphone} 
+        className='iphone'
+        alt='iPhone'
+        initial={{ y: -10 }}
+        animate={{ y: 10 }}
+        transition={{
+          type: "tween",
+          repeatType: "mirror",
+          duration: 2,   
+          repeat: Infinity
+        }}
+      />
+      <motion.img 
+        src={gradient}
+        className='gradient'
+        alt='Gradient Background'
+        initial={{ y: 0 }}
+        animate={{ y: 10 }}
+        transition={{ 
+          type: "tween",
+          repeatType: "mirror",
+          duration: 2,
+          repeat: Infinity
+        }}
+      />
+    </div>
     </div>
   );
 }

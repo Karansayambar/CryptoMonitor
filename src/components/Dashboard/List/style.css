@@ -1,16 +1,49 @@
 .list-container {
-  background-color: var(--darkgrey);
+  /* background-color: var(--darkgrey); */
   margin: 1rem auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   height: 100px;
-  border-radius: 2rem;
-  /* width: 90%;
-  padding: 0 1rem; */
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+.list-container:hover {
+  background-color: var(--darkgrey);
 }
 
 .list-container td {
   text-align: left;
   min-width: 18%;
+}
+
+@media screen and (max-width: 800px) {
+  .list-container {
+    width: 100vw;
+    padding: 0% !important;
+    box-sizing: border-box;
+    border-color: red;
+    font-size: 12px !important;
+    margin: 0%;
+  }
+  .total_vol {
+    display: none;
+  }
+  .market_cap {
+    display: none;
+  }
+  .chip-flex div {
+    /* display: none !important; */
+    font-size: 10px;
+  }
+
+  .chip-flex :nth-child(2) {
+    display: none !important;
+  }
+
+  .icon-img {
+    width: 40px !important;
+    height: 40px !important;
+  }
 }

@@ -3,10 +3,29 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 table {
-  width: 95%;
+  width: 100%;
   margin: auto;
   display: block;
+}
+
+@media only screen and (max-width: 800) {
+  .tab-context {
+    margin-left: 1rem;
+  }
+
+  /* .list-table {
+    width: 100%;
+    padding: 0;
+    margin: 0%;
+  } */
+
+  /* .tabpanel {
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+  } */
 }

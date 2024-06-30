@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 
 const Header = () => {
   return (
+    <>
   <div className="navbar">
     <h2>CryptoMonitor <span style={{color:"var(--orange"}}>.</span></h2>
     <div className="links">
@@ -20,6 +21,7 @@ const Header = () => {
         <TemporaryDrawer/>
     </div>
   </div>
+  </>
 );
 };
 

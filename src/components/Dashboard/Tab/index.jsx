@@ -17,12 +17,19 @@ const TabsComponent = ({coin}) => {
 
     const style = {
         color: "var(--white)",
-        width: "50vw",
+        width: "100vw",
         fontSize: "1.2rem",
         fontWeight: 600,
         fontFamily: "Inter",
         textTransform: "capitalize"
     };
+
+    const style1 = {
+        width : "100%",
+        padding : "0%",
+        mardin : "0%"
+
+    }
 
     const theme = createTheme({
         palette: {
@@ -34,20 +41,20 @@ const TabsComponent = ({coin}) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <TabContext value={value}>
+            <TabContext className="tab-context" value={value}>
                 <TabList onChange={handleChange} variant="fullWidth">
                     <Tab label="grid" value="grid" sx={style} />
                     <Tab label="list" value="list" sx={style} />
                 </TabList>
-                <TabPanel value="grid">
+                <TabPanel value="grid" variant="fullWidth" sx={style1}>
                     <div className='grid-flex'>
                     {coin.map((item, i) => (
                             <Grid key={i} coin={item} />
                     ))}
                     </div>
                 </TabPanel>
-                <TabPanel value="list">
-                    <table>
+                <TabPanel value="list" variant="fullWidth" sx={style1}>
+                    <table className='list-table'>
                         {coin.map((item, i) => (
                           <List key={i} coin={item}/>
                         ))}

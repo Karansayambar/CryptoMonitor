@@ -70,7 +70,10 @@
 }
 @media only screen and (max-width: 800px) {
   .landing-flex {
+    width: 90vw;
     flex-direction: column;
+    /* padding: 0 auto !important; */
+    /* margin: 0px 1px; */
   }
   .crypto-monitor-text,
   .real-time-text {
@@ -90,5 +93,17 @@
   }
   .landing-btn {
     margin-bottom: 2rem;
+  }
+  .left-component {
+    font-size: 20px;
+    text-align: center !important;
+  }
+
+  .crypto-monitor-text {
+    font-size: 60px;
+  }
+
+  .real-time-text {
+    font-size: 60px;
   }
 }

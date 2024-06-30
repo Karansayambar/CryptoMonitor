@@ -22,8 +22,8 @@ export default function TemporaryDrawer() {
                 <Link to="/"><p className="link">Home</p></Link>
                 <Link to="/wishlist"><p className="link">WishList</p></Link>
                 <Link to="/shop"><p className="link">Shop</p></Link>
-                <Link to="/dashboard"><p className="link">Compare</p></Link>
-                <Link to="/"><Button text="Dashboard" onClick={() => console.log("click")}/></Link>
+                <Link to="/compare"><p className="link">Compare</p></Link>
+                <Link to="/dashboard"><p text="Dashboard" onClick={() => console.log("click")}> Dashboard</p></Link>
             </div>
 
           </Drawer>
