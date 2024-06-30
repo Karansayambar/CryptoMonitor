@@ -1,4 +1,5 @@
 .landing-flex {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -60,6 +61,10 @@
 }
 
 @media only screen and (max-width: 1250px) {
+  .landing-flex {
+    width: 100%;
+    margin: auto;
+  }
   .crypto-monitor-text,
   .real-time-text {
     font-size: 4.5rem;
@@ -70,10 +75,10 @@
 }
 @media only screen and (max-width: 800px) {
   .landing-flex {
-    width: 90vw;
+    width: 100vw;
     flex-direction: column;
-    /* padding: 0 auto !important; */
-    /* margin: 0px 1px; */
+    padding: 0 5px !important;
+    margin: 0px 1px;
   }
   .crypto-monitor-text,
   .real-time-text {
@@ -82,21 +87,42 @@
   .info {
     font-size: 1rem;
   }
+
+  .iphone {
+    min-height: 300px;
+    position: relative;
+    z-index: 10;
+    width: 350px;
+    top: 2rem; /* Adjust based on your layout */
+    right: -1rem;
+  }
   .gradient {
-    top: 44rem;
-    right: -2.5rem;
-    margin: 0;
     position: absolute;
+    top: 32rem; /* Adjust based on your layout */
+    right: 2rem; /* Adjust based on your layout */
+    margin: 0;
     width: 270px;
     height: 550px;
     border-radius: 20px;
+    /* Additional styles for visual appearance */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Example background color with transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Example box shadow */
   }
   .landing-btn {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem !important;
+    margin-left: 3rem;
   }
   .left-component {
     font-size: 20px;
     text-align: center !important;
+  }
+  .right-component {
+    margin: auto;
   }
 
   .crypto-monitor-text {
@@ -105,5 +131,45 @@
 
   .real-time-text {
     font-size: 60px;
+  }
+}
+
+@media only screen and (width: 768px) {
+  .landing-flex {
+    margin: auto;
+    width: 768 !important; /* or 100% depending on your requirement */
+  }
+
+  .landing-flex {
+    margin: auto !important;
+    padding-left: 8rem !important;
+  }
+  .iphone {
+    min-height: 300px;
+    position: relative;
+    z-index: 10;
+    width: 350px;
+    top: 2rem; /* Adjust based on your layout */
+    right: 3rem;
+  }
+  .gradient {
+    position: absolute;
+    top: 30rem; /* Adjust based on your layout */
+    right: 13rem; /* Adjust based on your layout */
+    margin: 0;
+    width: 270px;
+    height: 550px;
+    border-radius: 20px;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Example background color with transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Example box shadow */
+  }
+  .landing-btn {
+    margin-bottom: 3rem !important;
+    margin-left: 9rem;
   }
 }
